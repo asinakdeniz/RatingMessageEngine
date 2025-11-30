@@ -1,0 +1,48 @@
+app:
+  version: PROJECT_VERSION
+  environment: ${ENV_NAME}
+  description: "Rating Engine Service"
+
+spring:
+  application:
+    name: Resource Management
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      maximum-pool-size: 10
+      minimum-idle: 3
+      connection-timeout: 10000
+      idle-timeout: 300000
+      max-lifetime: 600000
+      leak-detection-threshold: 500000
+      data-source-properties:
+        options: -c tcp_keepalives_idle=30
+  kafka:
+    client-id: rating-engine
+    billing-line-topic: customer_services.billing.billing_line.event
+  threads:
+    virtual:
+      enabled: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+          - health
+          - info
+          - metrics
+          - prometheus
+          - liquibase
+  health:
+    diskspace.enabled: true
+  endpoint:
+    health:
+      probes:
+        enabled: true
+  metrics:
+    enable:
+      all: true
+  info:
+    git:
+      mode: full

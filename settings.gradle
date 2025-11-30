@@ -1,0 +1,12 @@
+pluginManagement {
+    repositories {
+        maven {
+            url "https://nexus.energia.sise/repository/plugins-gradle/#browse/search/maven"
+        }
+        maven {
+            url "https://nexus.energia.sise/repository/confluent-maven/#browse/search/maven"
+        }
+    }
+}
+
+rootProject.name = 'RatingMessageEngine'

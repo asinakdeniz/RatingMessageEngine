@@ -1,0 +1,14 @@
+app:
+  environment: local
+
+
+spring:
+  datasource:
+    url: "jdbc:postgresql://localhost:5432/ratingman?currentSchema=rating_engine"
+    username: ratingadmin
+    password: securepassword
+  kafka:
+    bootstrap-servers: 'localhost:9092'
+    schema-registry-url: 'mock://mock'
+    security:
+      protocol: 'PLAINTEXT'
