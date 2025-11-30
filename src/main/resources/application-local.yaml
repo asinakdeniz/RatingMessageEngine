@@ -12,3 +12,6 @@ spring:
     schema-registry-url: 'mock://mock'
     security:
       protocol: 'PLAINTEXT'
+
+server:
+  port: 8081

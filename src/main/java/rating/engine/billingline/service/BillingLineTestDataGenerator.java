@@ -38,7 +38,6 @@ public class BillingLineTestDataGenerator {
 
     private BillingLineEntity createBillingLineEntity(Long id) {
         return BillingLineEntity.builder()
-                .id(id)
                 .contractId("CONTRACT_" + id)
                 .startDate(Instant.now())
                 .endDate(Instant.now())
