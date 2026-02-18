@@ -2,6 +2,11 @@ services:
 
     database:
         image: nexus.energia.sise:5003/postgres:18.1
+        command: >
+            postgres
+            -c bgwriter_lru_maxpages=200
+            -c bgwriter_delay=50ms
+            -c max_wal_size=4GB
         ports:
             - "5432:5432"
         environment:

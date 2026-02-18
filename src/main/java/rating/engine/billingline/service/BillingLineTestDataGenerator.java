@@ -24,7 +24,7 @@ public class BillingLineTestDataGenerator {
     @Async
     public void generateBillingLine() {
         int batchSize = 1000;
-        int totalBatches = 500;
+        int totalBatches = 5000;
         for (long i = 0; i < totalBatches; i++) {
             List<BillingLineEntity> billingLineEntities = new ArrayList<>();
             for (long j = 0; j < batchSize; j++) {
