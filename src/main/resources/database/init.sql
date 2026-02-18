@@ -14,6 +14,9 @@ CREATE TABLE rating_engine.billing_line
 -- Indexes for performance
 CREATE INDEX idx_billing_line_status ON rating_engine.billing_line (status);
 
+CREATE INDEX CONCURRENTLY idx_billing_line_status_pending ON rating_engine.billing_line (id) WHERE status = 'UNPROCESSED';
+
+
 CREATE TABLE rating_engine.billing_line_gold
 (
     id           BIGSERIAL PRIMARY KEY,
